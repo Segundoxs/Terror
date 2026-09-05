@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Quiz.css">
+    <title>Quiz</title>
+</head>
+<body>
+    <main>
+       <h1> Terror Test </h1>
+        <p>Que tipo de vilão você é?</p>
+        <h1>Qual vilão de terror você seria?</h1>
+        <p>Responda às perguntas e descubra!</p>
+        
+        <section class="pergunta">
+            <h2>1. Como você reage quando alguém te irrita de verdade?</h2>
+            <div class="card-grid">
+                <div class="game-card" onclick="responder('michael', 1, this)">
+                    <img src="Ibagens/michael myers.jpeg" alt="Michael Myers">
+                    <span class="game-card-tag">Michael</span>
+                    <div class="game-card-info">
+                        <h3>Silêncio estratégico</h3>
+                        <p>Fico calado e espero o momento certo.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('jason', 1, this)">
+                    <img src="Ibagens/jason.jpeg" alt="Jason Voorhees">
+                    <span class="game-card-tag">Jason</span>
+                    <div class="game-card-info">
+                        <h3>Vingança futura</h3>
+                        <p>Guardo rancor e cobro a conta um dia.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('freddy', 1, this)">
+                    <img src="Ibagens/fred.jpeg" alt="Freddy Krueger">
+                    <span class="game-card-tag">Freddy</span>
+                    <div class="game-card-info">
+                        <h3>Ironia afiada</h3>
+                        <p>Devolvo com ironia na mesma hora.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('chucky', 1, this)">
+                    <img src="Ibagens/chuck.jpg" alt="Chucky">
+                    <span class="game-card-tag">Chucky</span>
+                    <div class="game-card-info">
+                        <h3>Piada ácida</h3>
+                        <p>Solto uma piada debochada na hora.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('ghostface', 1, this)">
+                    <img src="Ibagens/ghostface.jpeg" alt="Ghostface">
+                    <span class="game-card-tag">Ghostface</span>
+                    <div class="game-card-info">
+                        <h3>Drama público</h3>
+                        <p>Conto pra todo mundo o que a pessoa fez.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('pennywise', 1, this)">
+                    <img src="Ibagens/palhaço.jpeg" alt="Pennywise">
+                    <span class="game-card-tag">Pennywise</span>
+                    <div class="game-card-info">
+                        <h3>Jogo de longo prazo</h3>
+                        <p>Uso isso a meu favor depois, com calma.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="pergunta">
+            <h2>2. Sexta à noite, você prefere...</h2>
+            <div class="card-grid">
+                <div class="game-card" onclick="responder('michael', 2, this)">
+                    <img src="Ibagens/michael myers.jpeg" alt="Michael Myers">
+                    <span class="game-card-tag">Michael</span>
+                    <div class="game-card-info">
+                        <h3>Sozinho em silêncio</h3>
+                        <p>Ficar sozinho, na paz, sem ninguém.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('jason', 2, this)">
+                    <img src="Ibagens/jason.jpeg" alt="Jason Voorhees">
+                    <span class="game-card-tag">Jason</span>
+                    <div class="game-card-info">
+                        <h3>Resolver pendências</h3>
+                        <p>Sair pra resolver algo que ficou pra trás.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('freddy', 2, this)">
+                    <img src="Ibagens/fred.jpeg" alt="Freddy Krueger">
+                    <span class="game-card-tag">Freddy</span>
+                    <div class="game-card-info">
+                        <h3>Pegadinha maliciosa</h3>
+                        <p>Aprontar uma pegadinha em alguém.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('chucky', 2, this)">
+                    <img src="Ibagens/chuck.jpg" alt="Chucky">
+                    <span class="game-card-tag">Chucky</span>
+                    <div class="game-card-info">
+                        <h3>Fazer besteira</h3>
+                        <p>Se jogar com os amigos e aprontar.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('ghostface', 2, this)">
+                    <img src="Ibagens/ghostface.jpeg" alt="Ghostface">
+                    <span class="game-card-tag">Ghostface</span>
+                    <div class="game-card-info">
+                        <h3>Centro das atenções</h3>
+                        <p>Ir numa festa e ser o destaque.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('pennywise', 2, this)">
+                    <img src="Ibagens/palhaço.jpeg" alt="Pennywise">
+                    <span class="game-card-tag">Pennywise</span>
+                    <div class="game-card-info">
+                        <h3>Assustar quem passa</h3>
+                        <p>Ficar observando e assustando pessoas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="pergunta">
+            <h2>3. Escolha uma arma pro apocalipse zumbi:</h2>
+            <div class="card-grid">
+                <div class="game-card" onclick="responder('michael', 3, this)">
+                    <img src="Ibagens/michael myers.jpeg" alt="Michael Myers">
+                    <span class="game-card-tag">Michael</span>
+                    <div class="game-card-info">
+                        <h3>Faca de cozinha</h3>
+                        <p>Simples, letal e sempre à disposição.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('jason', 3, this)">
+                    <img src="Ibagens/jason.jpeg" alt="Jason Voorhees">
+                    <span class="game-card-tag">Jason</span>
+                    <div class="game-card-info">
+                        <h3>Machadinha</h3>
+                        <p>Força bruta e impacto imediato.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('freddy', 3, this)">
+                    <img src="Ibagens/fred.jpeg" alt="Freddy Krueger">
+                    <span class="game-card-tag">Freddy</span>
+                    <div class="game-card-info">
+                        <h3>Luvas de metal</h3>
+                        <p>Lâminas que causam dor e medo.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('chucky', 3, this)">
+                    <img src="Ibagens/chuck.jpg" alt="Chucky">
+                    <span class="game-card-tag">Chucky</span>
+                    <div class="game-card-info">
+                        <h3>Faca pequena e rápida</h3>
+                        <p>Velocidade e precisão são tudo.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('ghostface', 3, this)">
+                    <img src="Ibagens/ghostface.jpeg" alt="Ghostface">
+                    <span class="game-card-tag">Ghostface</span>
+                    <div class="game-card-info">
+                        <h3>Máscara + faca</h3>
+                        <p>O mistério é parte do ataque.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('pennywise', 3, this)">
+                    <img src="Ibagens/palhaço.jpeg" alt="Pennywise">
+                    <span class="game-card-tag">Pennywise</span>
+                    <div class="game-card-info">
+                        <h3>Ilusão</h3>
+                        <p>Nenhuma arma — uso a mente pra me safar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="pergunta">
+            <h2>4. Como as pessoas te descreveriam em 3 palavras?</h2>
+            <div class="card-grid">
+                <div class="game-card" onclick="responder('michael', 4, this)">
+                    <img src="Ibagens/michael myers.jpeg" alt="Michael Myers">
+                    <span class="game-card-tag">Michael</span>
+                    <div class="game-card-info">
+                        <h3>Quieto • Estranho • Imprevisível</h3>
+                        <p>Ninguém nunca sabe o que você pensa.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('jason', 4, this)">
+                    <img src="Ibagens/jason.jpeg" alt="Jason Voorhees">
+                    <span class="game-card-tag">Jason</span>
+                    <div class="game-card-info">
+                        <h3>Forte • Leal • Vingativo</h3>
+                        <p>Protege os seus e pune quem erra.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('freddy', 4, this)">
+                    <img src="Ibagens/fred.jpeg" alt="Freddy Krueger">
+                    <span class="game-card-tag">Freddy</span>
+                    <div class="game-card-info">
+                        <h3>Inteligente • Sarcástico • Manipulador</h3>
+                        <p>Sua mente é sua melhor arma.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('chucky', 4, this)">
+                    <img src="Ibagens/chuck.jpg" alt="Chucky">
+                    <span class="game-card-tag">Chucky</span>
+                    <div class="game-card-info">
+                        <h3>Engraçado • Exagerado • Imprevisível</h3>
+                        <p>Personalidade forte e sem filtros.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('ghostface', 4, this)">
+                    <img src="Ibagens/ghostface.jpeg" alt="Ghostface">
+                    <span class="game-card-tag">Ghostface</span>
+                    <div class="game-card-info">
+                        <h3>Social • Dramático • Teatral</h3>
+                        <p>Tudo na sua vida é um grande evento.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('pennywise', 4, this)">
+                    <img src="Ibagens/palhaço.jpeg" alt="Pennywise">
+                    <span class="game-card-tag">Pennywise</span>
+                    <div class="game-card-info">
+                        <h3>Misterioso • Adaptável • Assustador</h3>
+                        <p>Você se transforma conforme a situação.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="pergunta">
+            <h2>5. Ambiente favorito pra um filme de terror acontecer:</h2>
+            <div class="card-grid">
+                <div class="game-card" onclick="responder('michael', 5, this)">
+                    <img src="Ibagens/michael myers.jpeg" alt="Michael Myers">
+                    <span class="game-card-tag">Michael</span>
+                    <div class="game-card-info">
+                        <h3>Casa antiga e silenciosa</h3>
+                        <p>O silêncio esconde os maiores segredos.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('jason', 5, this)">
+                    <img src="Ibagens/jason.jpeg" alt="Jason Voorhees">
+                    <span class="game-card-tag">Jason</span>
+                    <div class="game-card-info">
+                        <h3>Acampamento isolado</h3>
+                        <p>Natureza selvagem e sem ajuda por perto.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('freddy', 5, this)">
+                    <img src="Ibagens/fred.jpeg" alt="Freddy Krueger">
+                    <span class="game-card-tag">Freddy</span>
+                    <div class="game-card-info">
+                        <h3>Dentro dos sonhos</h3>
+                        <p>O mundo da mente é o seu playground.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('chucky', 5, this)">
+                    <img src="Ibagens/chuck.jpg" alt="Chucky">
+                    <span class="game-card-tag">Chucky</span>
+                    <div class="game-card-info">
+                        <h3>Casa comum, cheia de brinquedos</h3>
+                        <p>O perigo onde menos se espera.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('ghostface', 5, this)">
+                    <img src="Ibagens/ghostface.jpeg" alt="Ghostface">
+                    <span class="game-card-tag">Ghostface</span>
+                    <div class="game-card-info">
+                        <h3>Cidade pequena conectada</h3>
+                        <p>Vítimas com laços em comum.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('pennywise', 5, this)">
+                    <img src="Ibagens/palhaço.jpeg" alt="Pennywise">
+                    <span class="game-card-tag">Pennywise</span>
+                    <div class="game-card-info">
+                        <h3>Esgoto / cidade com segredo</h3>
+                        <p>Profundezas escondem verdades antigas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="pergunta">
+            <h2>6. Se fosse pegar alguém de surpresa, você...</h2>
+            <div class="card-grid">
+                <div class="game-card" onclick="responder('michael', 6, this)">
+                    <img src="Ibagens/michael myers.jpeg" alt="Michael Myers">
+                    <span class="game-card-tag">Michael</span>
+                    <div class="game-card-info">
+                        <h3>Aparece do nada</h3>
+                        <p>Sem barulho, sem aviso — de repente você está lá.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('jason', 6, this)">
+                    <img src="Ibagens/jason.jpeg" alt="Jason Voorhees">
+                    <span class="game-card-tag">Jason</span>
+                    <div class="game-card-info">
+                        <h3>Espera o momento perfeito</h3>
+                        <p>Paciência total até a brecha ideal.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('freddy', 6, this)">
+                    <img src="Ibagens/fred.jpeg" alt="Freddy Krueger">
+                    <span class="game-card-tag">Freddy</span>
+                    <div class="game-card-info">
+                        <h3>Entra na mente</h3>
+                        <p>Invade os pensamentos da pessoa.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('chucky', 6, this)">
+                    <img src="Ibagens/chuck.jpg" alt="Chucky">
+                    <span class="game-card-tag">Chucky</span>
+                    <div class="game-card-info">
+                        <h3>Finge ser inofensivo</h3>
+                        <p>Se disfarça até o momento final.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('ghostface', 6, this)">
+                    <img src="Ibagens/ghostface.jpeg" alt="Ghostface">
+                    <span class="game-card-tag">Ghostface</span>
+                    <div class="game-card-info">
+                        <h3>Liga avisando antes</h3>
+                        <p>O suspense faz parte do espetáculo.</p>
+                    </div>
+                </div>
+                <div class="game-card" onclick="responder('pennywise', 6, this)">
+                    <img src="Ibagens/palhaço.jpeg" alt="Pennywise">
+                    <span class="game-card-tag">Pennywise</span>
+                    <div class="game-card-info">
+                        <h3>Vira o maior medo</h3>
+                        <p>Se transforma no que a pessoa mais teme.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="resultado"></div>
+    </main>
+    <script src="Quiz.js"></script>
+</body>
+</html>
