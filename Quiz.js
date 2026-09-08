@@ -1,15 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const audioGrito = new Audio("https://p16-flow-file-sign.ibyteimg.com/tos-mya-i-u8dpqn1f20/8002e4c94cba4a889024846a2259fc12.mp3~tplv-0es2k971ck-image.image?rcl=2026090904174442D34E5FA07D0061C23A&rk3s=8e244e95&rrcfp=935dee89&x-expires=1789503465&x-signature=aXG8U0%2B7Pgmim%2BmP3IHh2xOZXWA%3D");
+    audioGrito.preload = "auto";
 
-    /* ==================================================
-       EFEITOS GERAIS DO SITE (grão, cursor, reveal, etc.)
-       ================================================== */
+    function tocarGrito() {
+        audioGrito.currentTime = 0;
+        audioGrito.play().catch(() => {});
+    }
 
-    /* ---------- 1. Injeta o grão de fundo ---------- */
     const grain = document.createElement("div");
     grain.id = "fx-grain";
     document.body.appendChild(grain);
 
-    /* ---------- 2. Injeta o cursor customizado ---------- */
     const glow = document.createElement("div");
     glow.id = "fx-cursor-glow";
     const dot = document.createElement("div");
@@ -34,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
         dot.classList.remove("fx-active");
     });
 
-    // Anima o glow com "atraso" (efeito suave de perseguição)
     function animateGlow(){
         glowX += (mouseX - glowX) * 0.08;
         glowY += (mouseY - glowY) * 0.08;
@@ -44,14 +44,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     animateGlow();
 
-    // Cursor cresce ao passar sobre links/botões
     const hoverables = document.querySelectorAll("a, button, input[type='submit']");
     hoverables.forEach(el => {
         el.addEventListener("mouseenter", () => dot.classList.add("fx-hover"));
         el.addEventListener("mouseleave", () => dot.classList.remove("fx-hover"));
     });
 
-    /* ---------- 3. Reveal ao rolar a página ---------- */
     const sections = document.querySelectorAll("main section, footer");
     sections.forEach(sec => sec.classList.add("fx-reveal"));
 
@@ -65,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sections.forEach(sec => observer.observe(sec));
 
-    /* ---------- 4. Efeito magnético nos botões/links ---------- */
     const magnetics = document.querySelectorAll("nav a, button, input[type='submit']");
     magnetics.forEach(el => {
         el.addEventListener("mousemove", (e) => {
@@ -79,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* ---------- 5. Parallax leve nas imagens ---------- */
     const images = document.querySelectorAll("main img");
     images.forEach(img => img.classList.add("fx-parallax"));
 
@@ -91,36 +87,26 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* ==================================================
-       EFEITO 3D E BRILHO NOS CARDS
-       ================================================== */
     const cards = document.querySelectorAll(".game-card");
-
     cards.forEach(card => {
         if (!card.querySelector(".game-card-shine")) {
             const shine = document.createElement("div");
             shine.className = "game-card-shine";
             card.appendChild(shine);
         }
-
         card.addEventListener("mousemove", (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-
             const rotateY = ((x - centerX) / centerX) * 10;
             const rotateX = ((centerY - y) / centerY) * 10;
-
             card.style.transform =
                 `perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
-
             card.style.setProperty("--mx", `${(x / rect.width) * 100}%`);
             card.style.setProperty("--my", `${(y / rect.height) * 100}%`);
         });
-
         card.addEventListener("mouseleave", () => {
             if (!card.classList.contains("selecionado")) {
                 card.style.transform =
@@ -129,11 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* ==================================================
-       LÓGICA DO QUIZ - 6 PERGUNTAS
-       ================================================== */
-
-    // Pontuação dos vilões
     let michael = 0;
     let jason = 0;
     let freddy = 0;
@@ -141,7 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let ghostface = 0;
     let pennywise = 0;
 
-    // Controle de perguntas — APENAS 6
     let pergunta1Respondida = false;
     let pergunta2Respondida = false;
     let pergunta3Respondida = false;
@@ -149,7 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let pergunta5Respondida = false;
     let pergunta6Respondida = false;
 
-    // Dados dos vilões
     const dadosViloes = {
         michael: {
             nome: "Michael Myers",
@@ -177,52 +156,48 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Função principal chamada no onclick
     function responder(vilao, pergunta, card) {
-
         if (pergunta === 1 && !pergunta1Respondida) {
+            tocarGrito();
             somarPonto(vilao);
             pergunta1Respondida = true;
             marcarCard(card);
             avancarPergunta(1);
         }
-
         if (pergunta === 2 && !pergunta2Respondida) {
+            tocarGrito();
             somarPonto(vilao);
             pergunta2Respondida = true;
             marcarCard(card);
             avancarPergunta(2);
         }
-
         if (pergunta === 3 && !pergunta3Respondida) {
+            tocarGrito();
             somarPonto(vilao);
             pergunta3Respondida = true;
             marcarCard(card);
             avancarPergunta(3);
         }
-
         if (pergunta === 4 && !pergunta4Respondida) {
+            tocarGrito();
             somarPonto(vilao);
             pergunta4Respondida = true;
             marcarCard(card);
             avancarPergunta(4);
         }
-
         if (pergunta === 5 && !pergunta5Respondida) {
+            tocarGrito();
             somarPonto(vilao);
             pergunta5Respondida = true;
             marcarCard(card);
             avancarPergunta(5);
         }
-
         if (pergunta === 6 && !pergunta6Respondida) {
+            tocarGrito();
             somarPonto(vilao);
             pergunta6Respondida = true;
             marcarCard(card);
-            // Última pergunta → NÃO avança mais, mostra resultado
         }
-
-        // Se TODAS as 6 forem respondidas → mostra resultado
         if (todasRespondidas()) {
             setTimeout(mostrarResultado, 600);
         }
@@ -259,7 +234,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 500);
     }
 
-    // ✅ SÓ VERIFICA AS 6 PERGUNTAS
     function todasRespondidas() {
         return pergunta1Respondida &&
                pergunta2Respondida &&
@@ -272,7 +246,6 @@ document.addEventListener("DOMContentLoaded", () => {
     function mostrarResultado() {
         document.querySelectorAll(".pergunta").forEach(p => p.style.display = "none");
         const resultado = document.getElementById("resultado");
-
         const todasPontuacoes = [
             { vilao: "michael", pontos: michael },
             { vilao: "jason", pontos: jason },
@@ -281,17 +254,14 @@ document.addEventListener("DOMContentLoaded", () => {
             { vilao: "ghostface", pontos: ghostface },
             { vilao: "pennywise", pontos: pennywise }
         ];
-
         todasPontuacoes.sort((a, b) => b.pontos - a.pontos);
         const vencedor = todasPontuacoes[0];
         const dados = dadosViloes[vencedor.vilao];
-
         let listaPontos = "";
         todasPontuacoes.forEach(item => {
             const destaque = (item.vilao === vencedor.vilao) ? 'style="font-weight:bold;color:#dc143c;"' : "";
             listaPontos += `<li ${destaque}>${dadosViloes[item.vilao].nome}: ${item.pontos} pontos</li>`;
         });
-
         resultado.innerHTML = `
             <div style="text-align:center; padding:40px 20px; max-width:700px; margin:0 auto;">
                 <p style="text-transform:uppercase; letter-spacing:3px; opacity:0.7; margin-bottom:10px;">Você é...</p>
@@ -310,12 +280,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 </button>
             </div>
         `;
-
         resultado.style.display = "block";
         window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    // Inicialização
     const todasPerguntas = document.querySelectorAll(".pergunta");
     todasPerguntas.forEach((p, index) => {
         p.style.display = (index === 0) ? "block" : "none";
@@ -324,7 +292,5 @@ document.addEventListener("DOMContentLoaded", () => {
     const resultadoEl = document.getElementById("resultado");
     if (resultadoEl) resultadoEl.style.display = "none";
 
-    // Torna a função disponível no HTML
     window.responder = responder;
-
 });
