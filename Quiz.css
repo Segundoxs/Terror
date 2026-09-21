@@ -12,13 +12,11 @@
   --dust-grey: #d3d3d3ff;
   --white-smoke: #f5f3f4ff;
   --white: #ffffffff;
-
   /* Sombras práticas */
   --sombra-vermelha: 0 0 25px rgba(164, 22, 26, 0.35);
   --sombra-vermelha-forte: 0 0 40px rgba(229, 56, 59, 0.5);
   --sombra-card: 0 8px 30px rgba(0, 0, 0, 0.7);
 }
-
 /* ==================================================
    RESET & BASE
    ================================================== */
@@ -27,9 +25,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
-
 html, body {
   min-height: 100vh;
   background: linear-gradient(140deg, var(--onyx), var(--carbon-black));
@@ -38,11 +34,9 @@ html, body {
   line-height: 1.6;
   overflow-x: hidden;
 }
-
 body {
   position: relative;
 }
-
 /* Grão de filme (adicionado via JS) */
 #fx-grain {
   position: fixed;
@@ -52,7 +46,6 @@ body {
   opacity: 0.06;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-
 /* Cursor customizado */
 #fx-cursor-dot {
   position: fixed;
@@ -67,7 +60,6 @@ body {
 }
 #fx-cursor-dot.fx-active { opacity: 1; }
 #fx-cursor-dot.fx-hover { transform: scale(2.2); }
-
 #fx-cursor-glow {
   position: fixed;
   width: 140px;
@@ -80,7 +72,6 @@ body {
   transition: opacity 0.3s;
 }
 #fx-cursor-glow.fx-active { opacity: 1; }
-
 /* ==================================================
    TIPOGRAFIA
    ================================================== */
@@ -88,39 +79,33 @@ h1, h2, h3 {
   font-family: 'Cormorant Garamond', serif;
   color: var(--white-smoke);
 }
-
 h1 {
   font-size: clamp(2rem, 5vw, 3.2rem);
   text-align: center;
   margin-bottom: 0.4em;
   letter-spacing: 2px;
 }
-
 h2 {
   font-size: clamp(1.4rem, 3vw, 2rem);
   color: var(--strawberry-red);
   margin-bottom: 1.4em;
   text-align: center;
 }
-
 h3 {
   font-size: 1.1rem;
   margin-bottom: 0.4em;
   color: var(--white);
 }
-
 p {
   color: var(--dust-grey);
   font-size: 1rem;
 }
-
 main > p {
   text-align: center;
-  margin-bottom: 3em;
+  margin-bottom: 1.5em;
   color: var(--silver);
   font-style: italic;
 }
-
 /* ==================================================
    LAYOUT PRINCIPAL
    ================================================== */
@@ -129,14 +114,12 @@ main {
   margin: 0 auto;
   padding: 40px 20px 60px;
 }
-
 .pergunta {
   display: none;
   animation: entrada 0.6s ease-out forwards;
   opacity: 0;
   transform: translateY(25px);
 }
-
 .pergunta.fx-reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -146,14 +129,42 @@ main {
   opacity: 1;
   transform: translateY(0);
 }
-
 @keyframes entrada {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
+/* ==================================================
+   BARRA DE PROGRESSO
+   ================================================== */
+.progresso-container {
+  max-width: 500px;
+  margin: 0 auto 3em;
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  height: 10px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(229, 56, 59, 0.2);
+}
+.progresso-barra {
+  height: 100%;
+  background: linear-gradient(90deg, var(--dark-garnet), var(--strawberry-red));
+  width: 16.66%;
+  transition: width 0.5s ease;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(229, 56, 59, 0.5);
+}
+.progresso-texto {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.85rem;
+  color: var(--silver);
+  white-space: nowrap;
+}
 /* ==================================================
    GRID DOS CARDS
    ================================================== */
@@ -162,7 +173,6 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 22px;
 }
-
 /* ==================================================
    CARD — ESTILO PRINCIPAL
    ================================================== */
@@ -178,7 +188,6 @@ main {
   transform-style: preserve-3d;
   perspective: 700px;
 }
-
 .game-card img {
   width: 100%;
   height: 170px;
@@ -186,11 +195,9 @@ main {
   display: block;
   transition: transform 0.4s ease;
 }
-
 .game-card:hover img {
   transform: scale(1.06);
 }
-
 .game-card-tag {
   position: absolute;
   top: 12px;
@@ -204,17 +211,14 @@ main {
   letter-spacing: 1px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
-
 .game-card-info {
   padding: 16px;
 }
-
 .game-card-info p {
   font-size: 0.93rem;
   color: var(--silver);
   line-height: 1.5;
 }
-
 /* Brilho que segue o mouse no card */
 .game-card-shine {
   position: absolute;
@@ -227,62 +231,280 @@ main {
 .game-card:hover .game-card-shine {
   opacity: 1;
 }
-
 /* Estados do card */
 .game-card:hover {
   box-shadow: var(--sombra-vermelha);
   border-image: linear-gradient(135deg, var(--strawberry-red), var(--mahogany-red-2)) 1;
 }
-
 .game-card.selecionado {
   border-color: var(--strawberry-red);
   box-shadow: var(--sombra-vermelha-forte);
   background: linear-gradient(145deg, rgba(164, 22, 26, 0.18), var(--carbon-black));
 }
-
 .game-card.desativado {
   opacity: 0.35;
   filter: grayscale(0.85);
   transform: none !important;
 }
-
 /* Parallax nas imagens */
 .fx-parallax {
   transform-origin: center center;
   will-change: transform;
 }
-
+/* ==================================================
+   BLOCOS DE ANÚNCIO (AdSense)
+   ================================================== */
+.adsense-bloco {
+  max-width: 728px;
+  margin: 0 auto 3em;
+  padding: 10px;
+  background: rgba(0,0,0,0.3);
+  border: 1px dashed rgba(229, 56, 59, 0.3);
+  border-radius: 8px;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.adsense-placeholder {
+  text-align: center;
+  color: var(--silver);
+  opacity: 0.7;
+}
+.adsense-placeholder span {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.adsense-placeholder small {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+.adsense-meio {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
 /* ==================================================
    RESULTADO
    ================================================== */
 #resultado {
   display: none;
   animation: entrada 0.7s ease-out forwards;
+  max-width: 800px;
+  margin: 0 auto;
 }
-
-#resultado h2 {
+.resultado-card {
+  background: linear-gradient(145deg, rgba(22, 26, 29, 0.9), rgba(102, 7, 8, 0.15));
+  border: 2px solid var(--mahogany-red);
+  border-radius: 16px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: var(--sombra-vermelha-forte);
+}
+.resultado-card .label {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  opacity: 0.7;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: var(--silver);
+}
+.resultado-card h2 {
+  font-size: clamp(2rem, 5vw, 2.8em);
   color: var(--strawberry-red);
+  margin-bottom: 20px;
   text-shadow: 0 0 18px rgba(229, 56, 59, 0.45);
 }
-
-#resultado button {
-  background: linear-gradient(90deg, var(--dark-garnet), var(--mahogany-red));
-  color: var(--white);
+.resultado-card .descricao {
+  font-size: 1.1em;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  color: var(--dust-grey);
+}
+.resultado-imagem {
+  width: 100%;
+  max-width: 350px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 auto 25px;
+  display: block;
+  border: 3px solid var(--mahogany-red);
+  box-shadow: var(--sombra-vermelha);
+}
+.pontuacao-box {
+  background: rgba(0,0,0,0.25);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  text-align: left;
+  border: 1px solid rgba(229, 56, 59, 0.2);
+}
+.pontuacao-box h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: var(--strawberry-red);
+  text-align: center;
+}
+.pontuacao-box ul {
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+}
+.pontuacao-box li {
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.pontuacao-box li:hover {
+  background: rgba(229, 56, 59, 0.1);
+}
+.pontuacao-box .vencedor {
+  font-weight: bold;
+  color: var(--strawberry-red);
+  background: rgba(229, 56, 59, 0.15);
+}
+/* ==================================================
+   BOTÕES DE AÇÃO NO RESULTADO
+   ================================================== */
+.botoes-acao {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.btn {
+  padding: 12px 24px;
   border: none;
   border-radius: 8px;
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
   transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.btn-primary {
+  background: linear-gradient(90deg, var(--dark-garnet), var(--mahogany-red));
+  color: var(--white);
   box-shadow: 0 4px 15px rgba(102, 7, 8, 0.4);
 }
-
-#resultado button:hover {
+.btn-primary:hover {
   background: linear-gradient(90deg, var(--mahogany-red), var(--strawberry-red));
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(164, 22, 26, 0.45);
 }
-
+.btn-secondary {
+  background: rgba(255,255,255,0.08);
+  color: var(--white-smoke);
+  border: 1px solid rgba(229, 56, 59, 0.3);
+}
+.btn-secondary:hover {
+  background: rgba(229, 56, 59, 0.15);
+  border-color: var(--strawberry-red);
+  transform: translateY(-2px);
+}
+.btn-whatsapp {
+  background: linear-gradient(90deg, #128C7E, #25D366);
+  color: white;
+}
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+/* ==================================================
+   SEÇÃO DE AFILIADOS
+   ================================================== */
+.afiliados-section {
+  background: rgba(0,0,0,0.25);
+  padding: 25px;
+  border-radius: 12px;
+  margin-top: 30px;
+  border: 1px solid rgba(229, 56, 59, 0.2);
+  text-align: left;
+}
+.afiliados-section h3 {
+  color: var(--strawberry-red);
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.3rem;
+}
+.afiliados-section .subtitulo {
+  text-align: center;
+  color: var(--silver);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+.afiliado-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  text-decoration: none;
+  color: inherit;
+}
+.afiliado-card:hover {
+  background: rgba(229, 56, 59, 0.1);
+  border-color: rgba(229, 56, 59, 0.3);
+  transform: translateX(5px);
+}
+.afiliado-icone {
+  font-size: 1.8rem;
+  min-width: 45px;
+  text-align: center;
+}
+.afiliado-info h4 {
+  color: var(--white);
+  margin-bottom: 3px;
+  font-size: 1rem;
+}
+.afiliado-info p {
+  font-size: 0.85rem;
+  color: var(--silver);
+  margin: 0;
+}
+.afiliado-seta {
+  margin-left: auto;
+  color: var(--strawberry-red);
+  font-size: 1.2rem;
+}
+/* ==================================================
+   BLOCO DE ANÚNCIO 3: DENTRO DO RESULTADO
+   ================================================== */
+.adsense-resultado {
+  margin: 25px auto;
+  max-width: 100%;
+}
+/* ==================================================
+   TOAST (notificação de link copiado)
+   ================================================== */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--mahogany-red);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  z-index: 10000;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+.toast.visivel {
+  transform: translateX(-50%) translateY(0);
+}
 /* ==================================================
    RESPONSIVIDADE
    ================================================== */
@@ -291,10 +513,14 @@ main {
   .card-grid { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
   .game-card img { height: 140px; }
   h2 { margin-bottom: 1em; }
+  .resultado-card { padding: 25px 18px; }
+  .botoes-acao { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; }
+  .adsense-bloco { margin-left: 0; margin-right: 0; }
 }
-
 @media (max-width: 480px) {
   .card-grid { grid-template-columns: 1fr; }
   main { padding: 15px 10px 30px; }
   h1 { letter-spacing: 1px; }
+  .resultado-imagem { max-width: 100%; height: 180px; }
 }
