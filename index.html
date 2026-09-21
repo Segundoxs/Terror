@@ -1,19 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Básico -->
+    <title>Qual Vilão do Terror Você Seria? | Quiz Terror Test</title>
+    <meta name="description" content="Responda 6 perguntas e descubra qual icônico vilão do terror combina com a sua personalidade! Michael Myers, Jason, Freddy, Chucky, Ghostface ou Pennywise?">
+    <meta name="keywords" content="quiz terror, vilão de terror, Michael Myers, Jason Voorhees, Freddy Krueger, Chucky, Ghostface, Pennywise, teste personalidade">
+    <meta name="author" content="Terror Test">
+    
+    <!-- Open Graph / Compartilhamento -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Qual Vilão do Terror Você Seria?">
+    <meta property="og:description" content="Descubra qual icônico vilão do terror combina com a sua personalidade!">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Qual Vilão do Terror Você Seria?">
+    <meta name="twitter:description" content="Responda e descubra seu lado sombrio!">
+    
     <link rel="stylesheet" href="Quiz.css">
-    <title>Quiz</title>
 </head>
 <body>
     <main>
-       <h1> Terror Test </h1>
+        <!-- ==================== BLOCO DE ANÚNCIO 1: TOPO ==================== -->
+        <!-- COLE SEU CÓDIGO DO ADSENSE AQUI -->
+        <div class="adsense-bloco" id="adsense-topo">
+            <div class="adsense-placeholder">
+                <span>📢 Espaço para Google AdSense</span>
+                <small>Cole seu código de anúncio aqui</small>
+            </div>
+        </div>
+        
+        <h1>🔪 Terror Test 🔪</h1>
         <p>Que tipo de vilão você é?</p>
         <h1>Qual vilão de terror você seria?</h1>
-        <p>Responda às perguntas e descubra!</p>
+        <p>Responda às perguntas e descubra o seu lado sombrio!</p>
+        
+        <!-- BARRA DE PROGRESSO -->
+        <div class="progresso-container">
+            <div class="progresso-barra" id="progressoBarra"></div>
+            <span class="progresso-texto" id="progressoTexto">Pergunta 1 de 6</span>
+        </div>
         
         <section class="pergunta">
             <h2>1. Como você reage quando alguém te irrita de verdade?</h2>
@@ -177,6 +208,15 @@
             </div>
         </section>
         
+        <!-- ==================== BLOCO DE ANÚNCIO 2: MEIO DO QUIZ ==================== -->
+        <!-- Aparece entre a pergunta 3 e 4 -->
+        <div class="adsense-bloco adsense-meio" id="adsense-meio" style="display:none;">
+            <div class="adsense-placeholder">
+                <span>📢 Espaço para Google AdSense</span>
+                <small>Anúncio do meio do quiz</small>
+            </div>
+        </div>
+        
         <section class="pergunta">
             <h2>4. Como as pessoas te descreveriam em 3 palavras?</h2>
             <div class="card-grid">
@@ -316,30 +356,37 @@
                     <img src="img/chuck.jpg" alt="Chucky">
                     <span class="game-card-tag">Chucky</span>
                     <div class="game-card-info">
-                        <h3>Finge ser inofensivo</h3>
-                        <p>Se disfarça até o momento final.</p>
+                        <h3>Ataque rápido e barulhento</h3>
+                        <p>Surpresa com estilo e gritaria.</p>
                     </div>
                 </div>
                 <div class="game-card" onclick="responder('ghostface', 6, this)">
                     <img src="img/ghostface.jpeg" alt="Ghostface">
                     <span class="game-card-tag">Ghostface</span>
                     <div class="game-card-info">
-                        <h3>Liga avisando antes</h3>
-                        <p>O suspense faz parte do espetáculo.</p>
+                        <h3>Liga primeiro</h3>
+                        <p>Uma chamada misteriosa antes do ataque.</p>
                     </div>
                 </div>
                 <div class="game-card" onclick="responder('pennywise', 6, this)">
                     <img src="img/palhaço.jpeg" alt="Pennywise">
                     <span class="game-card-tag">Pennywise</span>
                     <div class="game-card-info">
-                        <h3>Vira o maior medo</h3>
-                        <p>Se transforma no que a pessoa mais teme.</p>
+                        <h3>Usa o medo contra a pessoa</h3>
+                        <p>Se transforma no que ela mais teme.</p>
                     </div>
                 </div>
             </div>
         </section>
+        
+        <!-- ==================== SEÇÃO DE RESULTADO ==================== -->
         <div id="resultado"></div>
     </main>
+    
+    <footer style="text-align:center; padding:30px 20px; opacity:0.6; font-size:0.85rem;">
+        <p>🎃 Terror Test • Divirta-se com seu lado sombrio</p>
+    </footer>
+    
     <script src="Quiz.js"></script>
 </body>
 </html>
